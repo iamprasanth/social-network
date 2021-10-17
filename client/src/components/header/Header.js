@@ -31,7 +31,7 @@ export default function Header() {
         <span className="sugg-option">
             <span className="icon-wrap"></span>
             <span className="name">
-                <Link to={"/profile/" + suggestion.username}>{suggestion.fullname} / {suggestion.username}</Link>
+                <Link to={"/profile/" + suggestion.username}>{suggestion.fullname} @{suggestion.username}</Link>
             </span>
         </span>
     );
@@ -95,8 +95,10 @@ export default function Header() {
                 </div>
                 <div className="header__right">
                     <div className="header__info">
-                        <img className="user__avatar" alt="" />
-                        <h4>{user && user.fullname}</h4>
+                        <a href="/myprofile">
+                            <img className="user__avatar" alt="" />
+                            <h4>{user && user.fullname}</h4>
+                        </a>
                     </div>
                     <span className="material-icons"> expand_more </span>
                 </div>

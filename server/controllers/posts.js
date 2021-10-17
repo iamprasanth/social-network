@@ -133,7 +133,7 @@ exports.createComment = async (req, res) => {
                 }
             },
             { new: true }
-        );
+        ).populate('comments.userId');
         Post.updateMany({}, { $push: { "comments": { $each: [], $sort: { createdAt: -1 } } } })
 
         return responseController.succesResponse(res, post);

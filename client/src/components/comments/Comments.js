@@ -61,6 +61,7 @@ export const Comments = ({ comments, postId, loadPost }) => {
                     </form>
                 </div>
             </div>
+            {/* {console.log(comments[0].userId.username)} */}
             {
                 comments.map((comment, index) => {
                     return (
