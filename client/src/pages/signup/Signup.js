@@ -11,6 +11,7 @@ export default function Signup({ history }) {
     const [error, setError] = useState("");
 
     const initialValues = {
+        fullname: '',
         email: '',
         username: '',
         password: '',
@@ -35,13 +36,14 @@ export default function Signup({ history }) {
                 const { data, error } = await axios.post(
                     api.register,
                     {
+                        fullname: values.fullname,
                         email: values.email,
                         username: values.username,
                         password: values.password
                     },
                     config
                 );
-                localStorage.setItem("user", data.data);
+                localStorage.setItem("user", JSON.stringify(data.data));
                 history.push("/");
             } catch (error) {
                 console.log(error);
@@ -69,6 +71,17 @@ export default function Signup({ history }) {
 
                 <form onSubmit={formik.handleSubmit}>
 
+                    <div className="row">
+                        <i className="fas fa-user" />
+                        <input
+                            type="text"
+                            placeholder="Full name"
+                            name="fullname"
+                            onChange={formik.handleChange}
+                            value={formik.values.fullname}
+                            className={`${formik.errors.fullname ? "input-box-danger" : ""}`}
+                        />
+                    </div>
                     <div className="row">
                         <i className="fas fa-user" />
                         <input
