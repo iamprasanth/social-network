@@ -1,0 +1,11 @@
+
+  .new-post-modal {
+    width: 600px !important;
+  }
+  .new-post-modal textarea{
+    width: 561px;
+  }
+
+  .new-post-modal .row{
+    padding: 13px;
+  }

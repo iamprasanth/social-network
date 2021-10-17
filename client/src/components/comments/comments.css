@@ -1,0 +1,3 @@
+.comment-input-wrapper { position: relative; }
+.comment-input-wrapper input { border:none; background-color:#fff; display:block; width: 100%; box-sizing: border-box }
+.comment-input-wrapper img { position: absolute; top: 8px; right: 30px }
